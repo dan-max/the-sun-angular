@@ -6,11 +6,12 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuInicioComponent } from './menu-inicio/menu-inicio.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,HttpClientModule, FormsModule, RouterOutlet, NavbarComponent,CategoryListComponent, AddCategoryComponent, RouterLink, RouterLinkActive],
+  imports: [CommonModule,MenuInicioComponent,HttpClientModule, FormsModule, RouterOutlet, NavbarComponent,CategoryListComponent, AddCategoryComponent, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
