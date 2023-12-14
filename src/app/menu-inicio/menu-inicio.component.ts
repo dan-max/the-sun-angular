@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import {Router, RouterLinkActive, RouterModule } from '@angular/router';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
-  selector: 'app-menu-inicio',
+  selector: 'app-main-menu',
   standalone: true,
-  imports: [],
+  imports: [RouterModule,MatCardModule, MatButtonModule,RouterLinkActive],
   templateUrl: './menu-inicio.component.html',
   styleUrl: './menu-inicio.component.css'
 })
 export class MenuInicioComponent {
+  constructor(private router: Router) {}
 
+  shouldShowComponent(): boolean {
+    // Verifica si la ruta actual es la página de inicio
+    return this.router.url === '/';
+  }
 }

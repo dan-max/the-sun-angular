@@ -11,10 +11,11 @@ import { MenuInicioComponent } from './menu-inicio/menu-inicio.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,MenuInicioComponent,HttpClientModule, FormsModule, RouterOutlet, NavbarComponent,CategoryListComponent, AddCategoryComponent, RouterLink, RouterLinkActive],
+  imports: [CommonModule,MenuInicioComponent,HttpClientModule, FormsModule, RouterOutlet, NavbarComponent,CategoryListComponent, AddCategoryComponent, RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angularnet';
+
 }
