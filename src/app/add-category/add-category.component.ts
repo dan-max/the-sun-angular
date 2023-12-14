@@ -5,13 +5,15 @@ import { AddCategoryRequest } from '../models/add-category-request.model';
 import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
-
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-add-category',
   standalone: true,
   providers: [CategoryService],
-  imports: [RouterModule, FormsModule,HttpClientModule],
+  imports: [RouterModule, FormsModule,HttpClientModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule],
   templateUrl: './add-category.component.html',
   styleUrl: './add-category.component.css'
 })
