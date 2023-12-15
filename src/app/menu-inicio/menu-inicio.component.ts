@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import {Router, RouterLinkActive, RouterModule } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { Router, RouterLinkActive, RouterModule } from '@angular/router';
+import { MatButtonModule} from '@angular/material/button';
+import { MatCardModule} from '@angular/material/card';
 
 @Component({
-  selector: 'app-main-menu',
+  selector: 'app-inicio-menu',
   standalone: true,
   imports: [RouterModule,MatCardModule, MatButtonModule,RouterLinkActive],
   templateUrl: './menu-inicio.component.html',
-  styleUrl: './menu-inicio.component.css'
+  styleUrls: ['./menu-inicio.component.css']
 })
 export class MenuInicioComponent {
   constructor(private router: Router) {}
