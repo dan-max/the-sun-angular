@@ -6,7 +6,6 @@ import { CategoryService } from '../../services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'app-add-category',
   standalone: true,
