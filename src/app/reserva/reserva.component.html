@@ -1,45 +1,43 @@
-
 <h2 class="text-center">Gracias por elegirnos</h2>
 
-<h3 class="text-center">Fecha de llegada</h3>
+<h3 class="text-center">Reserva de habitación</h3>
 <div class="container d-flex">
   <div class="col-6">
-<img src=".\assets\vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" width="550px" alt="">
+    <img src=".\assets\vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" width="550px" alt="">
   </div>
-  <div class="col-6 ">
-<div class="mt-3 mx-5 mb-3">
-<mat-form-field color="accent">
-    <mat-label>Ingresa la fecha de reserva</mat-label>
-    <mat-date-range-input [rangePicker]="picker">
-      <input matStartDate placeholder="Start date">
-      <input matEndDate placeholder="End date">
-    </mat-date-range-input>
-    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-date-range-picker #picker></mat-date-range-picker>
-  </mat-form-field>
-</div>
-<div class="mx-5 d-flex flex-wrap">
-<div class="">
-<select class="form-select dropup" aria-label="Default select example">
-    <option selected>Huespedes</option>
-    <option value="1">Uno</option>
-    <option value="2">Dos</option>
-    <option value="3">Tres</option>
-  </select>
-</div>
-  <div class=" mx-2 ">
-  <select class="form-select dropdown" aria-label="Default select example">
-    <option selected>Habitaciones</option>
-    <option value="1">Standard</option>
-    <option value="2">Premium</option>
-    <option value="3">Deluxe</option>
-  </select>
-</div>
-</div>
+  <div class="col-6">
+    
+      <div class="mt-3 mx-5 mb-3">
+        @for (habitaciones of  habitacion; track habitacion) {
+          
+          <p>Tipo de habitacion: {{habitaciones.habitacion}}</p>
+          <p>Habitaciones existentes: {{habitaciones.existentes}}</p>
+          <p>Precio de Habitacion: {{habitaciones.precio}}</p>
+        }
+      </div>
 
-<div class=" mt-3 mb-3 mx-5">
-    <button class="btn btn-primary">Buscar Reserva</button>
-</div>
-</div>
+      <div class="mx-5 d-flex flex-wrap">
+        <div class="">
+          <select class="form-select dropdown" aria-label="Tipo de habitación" formControlName="habitacion">
+            <option selected value="null">Tipo de habitación</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+            <option value="Deluxe">Deluxe</option>
+          </select>
+        </div>
+        <div class=" mx-2 ">
+          <select class="form-select dropdown" aria-label="Número de huéspedes" formControlName="huespedes">
+            <option selected  value="null">Número de huéspedes</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+
+      <div class=" mt-3 mb-3 mx-5">
+        <button type="submit" class="btn btn-primary">Reservar</button>
+      </div>
+   
+  </div>
 </div>

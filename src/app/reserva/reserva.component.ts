@@ -1,16 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReservaService } from '../../services/reserva.service';
+
 
 @Component({
   selector: 'app-reserva',
   standalone: true,
-  imports: [ RouterModule,MatFormFieldModule, MatDatepickerModule, MatNativeDateModule],
+  imports: [
+    RouterModule
+  ],
+  providers: [ReservaService],
   templateUrl: './reserva.component.html',
-  styleUrl: './reserva.component.css'
+  styleUrls: ['./reserva.component.css']
 })
 export class ReservaComponent {
+  
+  habitacion: any[]=  [];
+  constructor(private reserva: ReservaService){}
 
+  ngOnInit(): void
+  {
+    this.llenarDatos();
+  }
+
+  llenarDatos(){
+    this.reserva.Addreserva().subscribe(habitacion=>{
+      this.habitacion=habitacion;
+      console.log(this.habitacion);
+    })
+  }
 }
