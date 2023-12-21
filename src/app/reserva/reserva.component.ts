@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReservaService } from '../../services/reserva.service';
-import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormGroup, FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {JsonPipe} from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -24,16 +24,17 @@ import { TotalComponent } from '../total/total.component';
   styleUrls: ['./reserva.component.css']
 })
 export class ReservaComponent {
-  range = new FormGroup({
-    start: new FormControl<Date | null>(null),
-    end: new FormControl<Date | null>(null),
-  });
-  habitacion: any[] = [];
+  reservaForm!: FormGroup
 
-  constructor(private reserva: ReservaService) {}
+  habitacion: any[] = [];
+ 
+
+  constructor(private reserva: ReservaService) {
+  }
 
   ngOnInit(): void {
     this.llenarDatos();
+    this.initForm()
   }
 
   llenarDatos() {
@@ -41,9 +42,24 @@ export class ReservaComponent {
       this.habitacion = habitacion;
     });
   }
-
+  initForm() {
+    this.reservaForm = new FormGroup({
+      Fecha_ingreso: new FormControl(null, Validators.required),
+      Fecha_salida: new FormControl(null, Validators.required),
+      habitacion: new FormControl(null, Validators.required),
+      N_huespedes: new FormControl(null, Validators.required),
+    });
+  }
   onHabitacionChange(event:any) {
     const habitacionSeleccionada = event.target.value;
     console.log('Habitación seleccionada:', habitacionSeleccionada);
   }
+  onHuespedChange(event:any){
+    const HuespedSeleccion=event.target.value;
+    console.log('Huespedes', HuespedSeleccion)
+  }
+  onSubmit(){
+    console.log('formulario enviado', this.reservaForm.value);
+  }
+
 }
