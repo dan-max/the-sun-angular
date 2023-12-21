@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AddCategoryRequest } from '../app/models/add-category-request.model';
+import { AddCategoryRequest } from '../models/add-category-request.model';
 import { Observable } from 'rxjs';
 
 @Injectable({

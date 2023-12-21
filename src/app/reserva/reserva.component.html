@@ -8,26 +8,39 @@
   <div class="col-6">
     
       <div class="mt-3 mx-5 mb-3">
-        @for (habitaciones of  habitacion; track habitacion) {
-          
-          <p>Tipo de habitacion: {{habitaciones.habitacion}}</p>
-          <p>Habitaciones existentes: {{habitaciones.existentes}}</p>
-          <p>Precio de Habitacion: {{habitaciones.precio}}</p>
-        }
+        <mat-form-field>
+          <mat-label>Fecha de llegada</mat-label>
+          <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Start date">
+            <input matEndDate formControlName="end" placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        
+          @if (range.controls.start.hasError('matStartDateInvalid')) {
+            <mat-error>Invalid start date</mat-error>
+          }
+          @if (range.controls.end.hasError('matEndDateInvalid')) {
+            <mat-error>Invalid end date</mat-error>
+          }
+        </mat-form-field>
       </div>
 
       <div class="mx-5 d-flex flex-wrap">
         <div class="">
-          <select class="form-select dropdown" aria-label="Tipo de habitación" formControlName="habitacion">
-            <option selected value="null">Tipo de habitación</option>
-            <option value="Standard">Standard</option>
-            <option value="Premium">Premium</option>
-            <option value="Deluxe">Deluxe</option>
+
+          <select class="form-select dropdown" aria-label="Tipo de habitación" formControlName="habitacion" (change)="onHabitacionChange($event)">
+           
+            @for (cuarto of habitacion; track cuarto.id) {
+                <option value={{cuarto.habitacion}}>{{cuarto.habitacion}}</option>
+            }
           </select>
+          
         </div>
         <div class=" mx-2 ">
           <select class="form-select dropdown" aria-label="Número de huéspedes" formControlName="huespedes">
-            <option selected  value="null">Número de huéspedes</option>
+           
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -38,6 +51,8 @@
       <div class=" mt-3 mb-3 mx-5">
         <button type="submit" class="btn btn-primary">Reservar</button>
       </div>
-   
+      <div class="mx-5">
+      <app-total></app-total>
+    </div>
   </div>
 </div>

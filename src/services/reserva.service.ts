@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { reservaRequest } from '../app/models/reserva.request.model';
+import { reservaRequest } from '../models/reserva.request.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
