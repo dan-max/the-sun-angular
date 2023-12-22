@@ -12,8 +12,8 @@
         <mat-form-field>
           <mat-label>Fecha de llegada</mat-label>
           <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate formControlName="Fecha_ingreso" placeholder="Start date">
-            <input matEndDate formControlName="Fecha_salida" placeholder="End date">
+            <input matStartDate formControlName="fecha_ingreso" placeholder="Start date">
+            <input matEndDate formControlName="fecha_salida" placeholder="End date">
           </mat-date-range-input>
           <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -35,7 +35,7 @@
 
         </div>
         <div class=" mx-2 ">
-          <select class="form-select dropdown" aria-label="Número de huéspedes" formControlName="N_huespedes" (change)="onHuespedChange($event)">
+          <select class="form-select dropdown" aria-label="Número de huéspedes" formControlName="n_huespedes" (change)="onHuespedChange($event)">
 
             <option value="1">1</option>
             <option value="2">2</option>

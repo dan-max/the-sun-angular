@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { habitacionesRequest } from '../models/habitaciones';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { reservaRequest } from '../models/reserva.request.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatosReservaService {
-  private CarritoObservable:BehaviorSubject<habitacionesRequest>=
-  new BehaviorSubject<habitacionesRequest>({id: 0,
-    Habitacion: 'Habitación 101',
-    Precio: 0,
-    Disponibles: 0,
-    Existentes: 0});
-  constructor() { }
+  constructor (private http: HttpClient){}
+  addReserva(model: reservaRequest): Observable<void>{
+    return this.http.post<void>('https://localhost:7059/api/Huespedes',model)
+  }
 }

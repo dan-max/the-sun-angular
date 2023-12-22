@@ -1,6 +1,7 @@
 export interface reservaRequest{
-    Fecha_ingreso:Date;
-    Fecha_salida:Date;
-    N_huespedes:number;
+    fecha_ingreso:Date;
+    fecha_salida:Date;
+    n_huespedes:number;
+    habitacion:string;
 
 }
