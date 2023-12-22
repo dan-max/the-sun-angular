@@ -47,9 +47,9 @@ export class ReservaComponent {
     });
   }
   onSubmit(){
-    console.log('formulario enviado', this.reservaForm.value);
+    this.reservaForm.patchValue({ precio: this.precioSeleccionado });
     let datosReserva = this.reservaForm.value;
-
+    console.log('formulario enviado', this.reservaForm.value);
   try {
     this.datosReservaService.addReserva(datosReserva).subscribe(
       huesped=>{
@@ -69,6 +69,7 @@ export class ReservaComponent {
       fecha_salida: new FormControl(null, Validators.required),
       habitacion: new FormControl(null, Validators.required),
       n_huespedes: new FormControl(null, Validators.required),
+      precio: new FormControl(null) // Agregamos el control para el precio
     });
   }
   onHabitacionChange(event:any) {

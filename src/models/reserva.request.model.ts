@@ -3,5 +3,5 @@ export interface reservaRequest{
     fecha_salida:Date;
     n_huespedes:number;
     habitacion:string;
-
+    precio:number
 }
