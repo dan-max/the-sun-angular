@@ -31,6 +31,7 @@ export class ReservaComponent {
   reservaForm!: FormGroup
   
   habitacion: any[] = [];
+  precioSeleccionado?: number;
 
   constructor(private reserva: ReservaService,  private datosReservaService: DatosReservaService) {}
 
@@ -73,11 +74,11 @@ export class ReservaComponent {
   onHabitacionChange(event:any) {
     const habitacionSeleccionada = event.target.value;
     console.log('Habitación seleccionada:', habitacionSeleccionada);
+    this.precioSeleccionado = this.habitacion[event.target.selectedIndex].precio;
+    console.log(this.precioSeleccionado)
   }
   onHuespedChange(event:any){
     const HuespedSeleccion=event.target.value;
     console.log('Huespedes', HuespedSeleccion)
   }
-  
-
 }
