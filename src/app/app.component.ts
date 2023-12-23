@@ -6,6 +6,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuInicioComponent } from "./menu-inicio/menu-inicio.component";
 
 
 @Component({
@@ -20,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
         RouterLink,
         NavbarComponent,
         CategoryListComponent,
-        AddCategoryComponent]
+        AddCategoryComponent, MenuInicioComponent]
 })
 export class AppComponent {
   title = 'angularnet';

@@ -1,25 +1,27 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
+      <a class="navbar-brand">El sol</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Admin</a>
+            <a class="nav-link" [routerLink]="['reservas']">Reservas</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" [routerLink]="['/admin/categories']">Categories</a></li>
-            </ul>
-          </li>
+          
+        </ul>
+        
+      </div>
+      <div class="d-flex justify-content-end">
+        <ul style="list-style: none;" class="d-flex">
+        <li><img class="mt-2 mx-1" src=".\assets\bx-phone-call.svg" alt=""></li>
+        <li><p class="mt-2 mx-1">977432641</p></li>
+        <li><img class="mt-2 mx-1" src=".\assets\bx-chat.svg" alt=""></li>
+        <li><p class="mt-2 mx1">thesunhotel&#64;hotmail.com</p></li>
         </ul>
       </div>
     </div>
@@ -52,4 +54,4 @@
     </button>
   </div>
 
-  <app-inicio-menu></app-inicio-menu>
+ 

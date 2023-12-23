@@ -5,7 +5,7 @@ import { MenuInicioComponent } from '../menu-inicio/menu-inicio.component';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [ RouterModule,MenuInicioComponent],
+  imports: [ RouterModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
