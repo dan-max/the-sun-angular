@@ -6,8 +6,6 @@ import {JsonPipe} from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
-import { TotalComponent } from '../total/total.component';
-import { Subscription } from 'rxjs';
 import { DatosReservaService } from '../../services/datos-reserva.service';
 import { reservaRequest } from '../../models/reserva.request.model';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,7 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     JsonPipe,
     MatNativeDateModule,
-    TotalComponent,
     HttpClientModule],
   providers: [ReservaService,DatosReservaService],
   templateUrl: './reserva.component.html',

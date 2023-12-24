@@ -1,5 +1,6 @@
 .example-card {
     max-width: 350px;
+    max-height: 700px;
   }
   .imagen{
     width: 300px;
@@ -12,4 +13,7 @@
     align-items: center;
     background-color:whitesmoke;
     border-radius: 5px;
+  }
+  .cuerpo{
+    height: 200px;
   }
