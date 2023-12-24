@@ -1,5 +1,4 @@
 *{
-    
     height: 250px;
     margin: 0;
     padding: 0;
@@ -9,8 +8,8 @@
 .row{
     width: 100%;
     background: rgba(0, 0, 0, 0.767);
-    
 }
 .logosol{
     width: auto;
+    
 }
