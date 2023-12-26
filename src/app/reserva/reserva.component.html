@@ -1,6 +1,6 @@
-<h2 class="text-center">Gracias por elegirnos</h2>
+<h2 class="text-center user-select-none">Gracias por elegirnos</h2>
 
-<h3 class="text-center">Reserva de habitación</h3>
+<h3 class="text-center user-select-none">Reserva de habitación</h3>
 <div class="container d-flex">
   <div class="col-6">
     <img src=".\assets\vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg" width="550px" alt="">
@@ -30,7 +30,7 @@
 
             @for (cuarto of habitacion; track cuarto.id) {
                 <option value={{cuarto.habitacion}}>{{cuarto.habitacion}}</option>
-                
+
             }
           </select>
 
@@ -50,9 +50,10 @@
       </div>
     </form>
       <div class="mx-5">
-      
+
     </div>
   </div>
 </div>
+
 {{precioSeleccionado}}
 {{reservaForm.value |json}}
