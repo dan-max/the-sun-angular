@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ReservaService } from '../../services/reserva.service';
-import {FormGroup, FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {JsonPipe} from '@angular/common';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatNativeDateModule} from '@angular/material/core';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 import { DatosReservaService } from '../../services/datos-reserva.service';
 import { HttpClientModule } from '@angular/common/http';
 @Component({
@@ -28,6 +28,7 @@ export class ReservaComponent {
   habitacion: any[] = [];
   precioSeleccionado?: number;
   existente?: number;
+  disponible?: number;
   constructor(private reserva: ReservaService,  private datosReservaService: DatosReservaService) {}
 
   ngOnInit(): void {
@@ -71,8 +72,11 @@ export class ReservaComponent {
     const habitacionSeleccionada = event.target.value;
     console.log('Habitación seleccionada:', habitacionSeleccionada);
     this.precioSeleccionado = this.habitacion[event.target.selectedIndex].precio;
-    
-    console.log(this.precioSeleccionado)
+    this.existente=this.habitacion[event.target.selectedIndex].existentes;
+    this.disponible=this.habitacion[event.target.selectedIndex].disponibles;
+    console.log(this.existente);
+    console.log(this.disponible);
+    console.log(this.precioSeleccionado);
   }
   onHuespedChange(event:any){
     const HuespedSeleccion=event.target.value;
